@@ -1,4 +1,4 @@
-package com.example.masterlink
+package com.aprilsunmedia.masterlink
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:masterlink/utilities/colors.dart';
 
 import 'src/layouts/home/home.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
+  FlutterNativeSplash.remove();
 }
 
 class MainApp extends StatefulWidget {
@@ -29,7 +32,7 @@ class _MainAppState extends State<MainApp> {
         fontFamily: GoogleFonts.roboto(fontWeight: FontWeight.w600).fontFamily,
         appBarTheme: AppBarTheme(
           backgroundColor: kPrimaryColor,
-          titleTextStyle: GoogleFonts.vt323(fontSize: 32),
+          titleTextStyle: const TextStyle(fontFamily: "vt323", fontSize: 32),
         ),
       ),
       builder: EasyLoading.init(),

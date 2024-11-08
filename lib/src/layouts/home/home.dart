@@ -122,7 +122,8 @@ class HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("Master Link",
-                                  style: GoogleFonts.vt323(
+                                  style: TextStyle(
+                                      fontFamily: "VT323",
                                       fontWeight: FontWeight.bold,
                                       fontSize: 34,
                                       color: kPrimaryColor)),
@@ -266,15 +267,21 @@ class HomePageState extends State<HomePage> {
                                   shortnedUrl = result["shortLink"];
                                 });
                               } else {
-                                EasyLoading.showError(response.body);
+                                try {
+                                  final res = jsonDecode(response.body)[0];
+                                  EasyLoading.showError(res["message"]);
+                                } catch (e) {
+                                  EasyLoading.showError(response.body);
+                                }
                               }
                             }
                           },
                           child: isLoading
                               ? const CupertinoActivityIndicator()
-                              : Text(
+                              : const Text(
                                   "Short",
-                                  style: GoogleFonts.vt323(
+                                  style: TextStyle(
+                                      fontFamily: "VT323",
                                       fontWeight: FontWeight.bold,
                                       fontSize: 34),
                                 )),

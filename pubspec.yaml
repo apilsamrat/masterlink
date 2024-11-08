@@ -41,6 +41,8 @@ dependencies:
   flutter_provider: ^2.1.0
   http: ^1.2.1
   flutter_easyloading: ^3.0.5
+  flutter_native_splash: ^2.4.1
+
 
 dev_dependencies:
   flutter_test:
@@ -52,7 +54,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  flutter_native_splash: ^2.4.1
   # flutter_launcher_icons: 0.13.1
   change_app_package_name: ^1.4.0
 
@@ -74,14 +75,14 @@ flutter_launcher_icons:
 
 flutter_native_splash:
   color: "#FB2056"
-  image: assets/icon/splash512.png
+  image: assets/icon/splash.png
   android: true
   ios: true
   web: true
 
   android_12:
     color: "#FB2056"
-    image: assets/icon/splash512.png
+    image: assets/icon/splash.png
 
 flutter:
 
@@ -97,6 +98,10 @@ flutter:
   assets:
     - assets/icon/
 
+  fonts:
+    - family: VT323
+      fonts:
+        - asset: assets/fonts/VT323-Regular.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
